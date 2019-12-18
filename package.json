@@ -1,0 +1,19 @@
+{
+  "name": "shopify-tree",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "ls": "nodemcu-tool --port /dev/tty.SLAB_USBtoUART fsinfo",
+    "upload": "nodemcu-tool --port /dev/tty.SLAB_USBtoUART upload src/*",
+    "upload-app": "nodemcu-tool --port /dev/tty.SLAB_USBtoUART upload src/application.lua",
+    "devices": "nodemcu-tool --port /dev/tty.SLAB_USBtoUART devices",
+    "format": "nodemcu-tool --port /dev/tty.SLAB_USBtoUART mkfs --noninteractive",
+    "flash-fw": "esptool.py --port /dev/tty.SLAB_USBtoUART write_flash -fm qio 0x00000 firmware/nodemcu-master-13-modules-2019-12-17-18-42-13-float.bin",
+    "erease-flash-fw": "esptool.py --port /dev/tty.SLAB_USBtoUART erase_flash",
+    "terminal": "nodemcu-tool terminal"
+  },
+  "dependencies": {
+    "nodemcu-tool": "^3.1.0"
+  }
+}
